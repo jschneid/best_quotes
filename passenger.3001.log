@@ -1,0 +1,30 @@
+[ N 2020-05-15 14:55:38.6902 43391/T1 age/Wat/WatchdogMain.cpp:1373 ]: Starting Passenger watchdog...
+[ N 2020-05-15 14:55:38.7282 43396/T1 age/Cor/CoreMain.cpp:1340 ]: Starting Passenger core...
+[ N 2020-05-15 14:55:38.7283 43396/T1 age/Cor/CoreMain.cpp:256 ]: Passenger core running in multi-application mode.
+[ N 2020-05-15 14:55:38.7565 43396/T1 age/Cor/CoreMain.cpp:1015 ]: Passenger core online, PID 43396
+[ N 2020-05-15 14:55:41.4796 43396/T5 age/Cor/SecurityUpdateChecker.h:519 ]: Security update check: no update found (next check in 24 hours)
+[ E 2020-05-15 14:55:44.4635 43396/T5 Sec/Crypto.cpp:990 ]: Removing Passenger private key from keychain failed: Write permissions error.. Please remove the private key from the certificate labeled Phusion Passenger Open Source in your keychain.
+
+[ N 2020-05-16 11:49:50.6844 43396/T8 age/Cor/CoreMain.cpp:671 ]: Signal received. Gracefully shutting down... (send signal 2 more time(s) to force shutdown)
+[ N 2020-05-16 11:49:50.6851 43396/T1 age/Cor/CoreMain.cpp:1246 ]: Received command to shutdown gracefully. Waiting until all clients have disconnected...
+[ N 2020-05-16 11:49:50.6851 43396/T1 age/Cor/CoreMain.cpp:1147 ]: Checking whether to disconnect long-running connections for process 43443, application /Users/jon/psrc/rebuilding_rails/best_quotes (development)
+[ N 2020-05-16 11:49:50.6858 43396/Tn Ser/Server.h:901 ]: [ServerThr.8] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6859 43396/Tn Ser/Server.h:558 ]: [ServerThr.8] Shutdown finished
+[ N 2020-05-16 11:49:50.6859 43396/Tg Ser/Server.h:901 ]: [ServerThr.5] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6859 43396/Tk Ser/Server.h:901 ]: [ServerThr.7] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6860 43396/Tk Ser/Server.h:558 ]: [ServerThr.7] Shutdown finished
+[ N 2020-05-16 11:49:50.6859 43396/Ta Ser/Server.h:901 ]: [ServerThr.2] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6858 43396/Tc Ser/Server.h:901 ]: [ServerThr.3] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6859 43396/T8 Ser/Server.h:901 ]: [ServerThr.1] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6860 43396/Tg Ser/Server.h:558 ]: [ServerThr.5] Shutdown finished
+[ N 2020-05-16 11:49:50.6859 43396/Ti Ser/Server.h:901 ]: [ServerThr.6] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6859 43396/Te Ser/Server.h:901 ]: [ServerThr.4] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6861 43396/Ta Ser/Server.h:558 ]: [ServerThr.2] Shutdown finished
+[ N 2020-05-16 11:49:50.6861 43396/Ti Ser/Server.h:558 ]: [ServerThr.6] Shutdown finished
+[ N 2020-05-16 11:49:50.6861 43396/T8 Ser/Server.h:558 ]: [ServerThr.1] Shutdown finished
+[ N 2020-05-16 11:49:50.6861 43396/Tc Ser/Server.h:558 ]: [ServerThr.3] Shutdown finished
+[ N 2020-05-16 11:49:50.6861 43396/Te Ser/Server.h:558 ]: [ServerThr.4] Shutdown finished
+[ N 2020-05-16 11:49:50.6864 43396/Tp Ser/Server.h:901 ]: [ApiServer] Freed 0 spare client objects
+[ N 2020-05-16 11:49:50.6864 43396/Tp Ser/Server.h:558 ]: [ApiServer] Shutdown finished
+[ N 2020-05-16 11:49:50.6871 43396/T1 age/Cor/CoreMain.cpp:1147 ]: Checking whether to disconnect long-running connections for process 43443, application /Users/jon/psrc/rebuilding_rails/best_quotes (development)
+[ W 2020-05-16 11:50:20.6906 45923/T1 age/Wat/WatchdogMain.cpp:538 ]: Some Phusion Passenger agent processes did not exit in time, forcefully shutting down all.
