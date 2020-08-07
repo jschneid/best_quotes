@@ -32,6 +32,11 @@ class QuotesController < Rulers::Controller
     render :index, { quotes: quotes }
   end
 
+  def show
+    quote = FileModel.find(params['id'])
+    render :quote, obj: quote
+  end
+
   def update_quote
     raise 'This action supports only POST.' unless @env['REQUEST_METHOD'] == 'POST'
 
