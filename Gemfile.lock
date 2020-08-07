@@ -3,6 +3,7 @@ PATH
   specs:
     rulers (0.0.3)
       erubis
+      multi_json
       rack
 
 GEM
@@ -14,7 +15,8 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    rack (2.2.2)
+    multi_json (1.15.0)
+    rack (2.2.3)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
