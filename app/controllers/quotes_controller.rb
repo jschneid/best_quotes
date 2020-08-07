@@ -25,9 +25,11 @@ class QuotesController < Rulers::Controller
     render :quote, { obj: m }
   end
 
-  def quotes_by_jon
-    jon_quotes = FileModel.find_all_by_submitter('Jon')
-    render :index, { quotes: jon_quotes }
+  def quotes_by_submitter
+    submitter = Rack::Utils.parse_nested_query(@env['QUERY_STRING'])['submitter']
+
+    quotes = FileModel.find_all_by_submitter(submitter)
+    render :index, { quotes: quotes }
   end
 
   def update_quote
