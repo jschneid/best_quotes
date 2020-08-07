@@ -25,6 +25,11 @@ class QuotesController < Rulers::Controller
     render :quote, { obj: m }
   end
 
+  def quotes_by_jon
+    jon_quotes = FileModel.find_all_by_submitter('Jon')
+    render :index, { quotes: jon_quotes }
+  end
+
   def update_quote
     raise 'This action supports only POST.' unless @env['REQUEST_METHOD'] == 'POST'
 
