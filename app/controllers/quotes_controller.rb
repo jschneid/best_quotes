@@ -25,6 +25,20 @@ class QuotesController < Rulers::Controller
     render :quote, { obj: m }
   end
 
+  def update_quote
+    raise 'This action supports only POST.' unless @env['REQUEST_METHOD'] == 'POST'
+
+    # Hard-code updating quote ID 6 for now
+    quote = FileModel.find(6)
+
+    # Per the book: We don't have a way to get the POST params yet. Hard-code an update for now.
+    quote['attribution'] = 'Someone'
+
+    quote.save!
+
+    render :quote, { obj: quote }
+  end
+
   def exception
     raise "It's a bad one!"
   end
