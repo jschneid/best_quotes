@@ -2,17 +2,20 @@ require 'sqlite3'
 require 'rulers/sqlite_model'
 
 class MyTable < Rulers::Model::SQLite; end
-STDERR.puts MyTable.schema.inspect
+#STDERR.puts MyTable.schema.inspect
 
 # Create a row
-mt = MyTable.create 'title' => 'I saw it again!'
+# mt = MyTable.create 'title' => 'I saw it again!'
 
-puts "Count: #{MyTable.count}"
+# mt['title'] = 'I really did!'
+# mt.save!
 
-top_id = mt['id'].to_i
-(1..top_id).each do |id|
-  mt_id = MyTable.find(id)
-  puts "Found title #{mt_id['title']}."
-end
+# puts "Last: #{MyTable.find(MyTable.count - 1).inspect}"
 
+# mt2 = MyTable.find mt['id']
 
+last_record = MyTable.find(MyTable.count - 1)
+
+puts "Title: #{last_record['title']}"
+
+puts "Title (via column accessor): #{last_record.title}"
