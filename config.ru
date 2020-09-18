@@ -1,6 +1,13 @@
 require './config/application'
 require 'rack-google-analytics'
+require 'rack/lobster'
 use Rack::ContentType
+
+map '/lobster' do
+  use Rack::ShowExceptions
+  use BenchMarker, 10_000
+  run Rack::Lobster.new
+end
 
 class BenchMarker
   def initialize(app, runs = 100)
@@ -9,22 +16,27 @@ class BenchMarker
 
   def call(env) t = Time.now
     result = nil
-    @runs.times { result = @app.call(env) }
+    @runs.times do
+      result = @app.call(env)
+      return result if result[0] >= 300
+    end
 
     t2 = Time.now - t
     STDERR.puts <<OUTPUT
 Benchmark:
   #{@runs} runs
-  #{t2.to_f} seconds total
-  #{t2.to_f * 1000.0 / @runs} millisec/run
+  #{t2.to_f.round(3)} seconds total
+  #{(t2.to_f * 1000.0 / @runs).round(3)} millisec/run
 OUTPUT
     result
   end
 end
 
-# use BenchMarker, 1000
+use BenchMarker, 10_000
 
 # TODO: In a real app I'd use a real GA key here
-use Rack::GoogleAnalytics, :tracker => 'UA-xxxxxx-x'
+# use Rack::GoogleAnalytics, :tracker => 'UA-xxxxxx-x'
+
+# use Rack::ContentType
 
 run BestQuotes::Application.new
