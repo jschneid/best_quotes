@@ -1,4 +1,5 @@
 require './config/application'
+require 'rack-google-analytics'
 use Rack::ContentType
 
 class BenchMarker
@@ -22,5 +23,8 @@ OUTPUT
 end
 
 # use BenchMarker, 1000
+
+# TODO: In a real app I'd use a real GA key here
+use Rack::GoogleAnalytics, :tracker => 'UA-xxxxxx-x'
 
 run BestQuotes::Application.new
