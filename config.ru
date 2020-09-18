@@ -21,6 +21,6 @@ OUTPUT
   end
 end
 
-use BenchMarker, 1000
+# use BenchMarker, 1000
 
 run BestQuotes::Application.new
