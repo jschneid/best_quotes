@@ -19,3 +19,5 @@ last_record = MyTable.find(MyTable.count - 1)
 puts "Title: #{last_record['title']}"
 
 puts "Title (via column accessor): #{last_record.title}"
+
+puts "Nonsense call: #{last_record.abcdefg}"
