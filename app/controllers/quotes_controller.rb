@@ -1,3 +1,9 @@
+require 'sqlite3'
+require 'rulers/sqlite_model'
+
+class MyTable < Rulers::Model::SQLite; end
+
+
 class QuotesController < Rulers::Controller
   def index
     quotes = FileModel.all
@@ -11,8 +17,16 @@ class QuotesController < Rulers::Controller
   end
 
   def quote_1
-    quote_1 = FileModel.find(1)
-    render :quote, { obj: quote_1 }
+    quote_1 = FileModel.find('1')
+    user_agent = request.user_agent
+    render :quote, { obj: quote_1, user_agent: user_agent }
+  end
+
+  def quote_last_from_sql
+    quote = MyTable.find(MyTable.count - 1)
+
+    user_agent = request.user_agent
+    render :quote_from_sql, { obj: quote, user_agent: user_agent }
   end
 
   def new_quote
