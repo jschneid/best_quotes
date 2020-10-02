@@ -10,10 +10,9 @@ app.route do
   match 'sub-app', proc { [200, {}, ['Hello, sub-app!']] }
 
   # Default routes
-  # NOTE: Contrary to what page 134 claims, this does NOT support paths like "/quotes/a_quote",
-  # which is of the pattern :controller/:action
   match ':controller/:id/:action'
   match ':controller/:id', default: { 'action' => 'show' }
+  match ':controller/:action'
   match ':controller', default: { 'action' => 'index' }
 end
 
